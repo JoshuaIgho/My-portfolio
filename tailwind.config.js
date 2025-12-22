@@ -11,10 +11,12 @@ export default {
         primary: {
           50: '#f0f9ff',
           100: '#e0f2fe',
+          400: '#38bdf8',
           500: '#0ea5e9',
           600: '#0284c7',
           700: '#0369a1',
         },
+        border: 'hsl(214.3 31.8% 91.4%)',
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-in',
