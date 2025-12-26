@@ -4,8 +4,8 @@ export const projects = [
     title: 'Charmé',
     subtitle: 'Full-Stack E-Commerce Platform',
     description: 'A comprehensive e-commerce solution with product browsing, shopping cart, secure checkout, payment integration, and address management.',
-    image: '/projects/charme/preview.jpg',
-    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Stripe', 'Tailwind CSS'],
+    image: new URL('../assets/Screenshot 2025-12-23 at 18.20.47.png', import.meta.url).href,
+    technologies: ['React', 'Node.js', 'Express', 'Postgres', 'Stripe', 'Tailwind CSS'],
     features: [
       'Product catalog with filtering and search',
       'Shopping cart with persistent state',
@@ -14,16 +14,16 @@ export const projects = [
       'User address management',
       'Order tracking system'
     ],
-    github: 'https://github.com/yourusername/charme',
-    live: 'https://charme-demo.com',
+    github: 'https://github.com/JoshuaIgho/Charm-frontend-',
+    live: 'https://charmesiri.vercel.app/',
     category: 'full-stack'
   },
   {
     id: 2,
     title: 'AfricaCaribbeanConnect',
     subtitle: 'Portfolio & Documentary Showcase',
-    description: 'A dynamic portfolio website featuring work showcase, team member profiles, YouTube integration, and documentary content presentation.',
-    image: '/projects/africacaribbeanconnect/preview.jpg',
+    description: 'A dynamic portfolio website featuring work showcase, Rating, YouTube integration, and documentary content presentation.',
+    image: new URL('../assets/Screenshot 2025-12-23 at 18.30.33.png', import.meta.url).href,
     technologies: ['React', 'Node.js', 'YouTube API', 'Tailwind CSS', 'Express'],
     features: [
       'Project portfolio showcase',
@@ -33,8 +33,9 @@ export const projects = [
       'Responsive gallery',
       'Contact form integration'
     ],
-    github: 'https://github.com/yourusername/africacaribbeanconnect',
-    live: 'https://africacaribbeanconnect.com',
+    github: 'https://github.com/JoshuaIgho/africa-untold-journeys',
+    live: 'https://africa-untold-journeys.vercel.app/',
     category: 'frontend'
-  }
+  },
+  
 ];

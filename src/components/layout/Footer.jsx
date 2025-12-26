@@ -4,10 +4,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: FaGithub, href: 'https://github.com/yourusername', label: 'GitHub' },
-    { icon: FaLinkedin, href: 'https://linkedin.com/in/yourusername', label: 'LinkedIn' },
-    { icon: FaTwitter, href: 'https://twitter.com/yourusername', label: 'Twitter' },
-    { icon: FaEnvelope, href: 'mailto:your.email@example.com', label: 'Email' }
+    { icon: FaGithub, href: 'https://github.com/JoshuaIgho', label: 'GitHub' },
+    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/igho-joshua-b93a92289/', label: 'LinkedIn' },
+    { icon: FaTwitter, href: 'https://x.com/Joshua_M_codes', label: 'Twitter' },
+    { icon: FaEnvelope, href: 'mailto:joshuaalex822@gmail.com', label: 'Email' }
   ];
 
   const footerLinks = [
@@ -31,7 +31,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div>
             <h3 className="text-2xl font-bold text-primary-400 mb-4">
-              Your Name
+              Joshua Igho
             </h3>
             <p className="text-gray-400 mb-4">
               Full-Stack Developer passionate about creating innovative web solutions.
@@ -79,7 +79,7 @@ const Footer = () => {
                   href="mailto:your.email@example.com"
                   className="hover:text-primary-400 transition-colors"
                 >
-                  your.email@example.com
+                 joshuaalex822@gmail.com
                 </a>
               </li>
               <li>Lagos, Nigeria</li>
@@ -91,11 +91,9 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            © {currentYear} Your Name. All rights reserved.
+            © {currentYear}  All rights reserved.
           </p>
-          <p className="text-gray-400 text-sm flex items-center gap-2">
-            Made with <FaHeart className="text-red-500" /> using React & Tailwind CSS
-          </p>
+         
         </div>
       </div>
     </footer>
