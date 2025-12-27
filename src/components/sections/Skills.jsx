@@ -156,12 +156,12 @@ const Skills = () => {
             />
           </div>
 
-          {/* Additional Skills Tags */}
+          {/* Additional Skills Tags - Hidden on Mobile */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="relative bg-gradient-to-br from-primary-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 rounded-2xl p-8 shadow-xl overflow-hidden"
+            className="hidden md:block relative bg-gradient-to-br from-primary-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 rounded-2xl p-8 shadow-xl overflow-hidden"
           >
             {/* Decorative elements */}
             <div className="absolute top-0 right-0 w-40 h-40 bg-primary-200 dark:bg-primary-900 rounded-full blur-3xl opacity-20"></div>

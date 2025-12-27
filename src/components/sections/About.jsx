@@ -19,9 +19,9 @@ const About = () => {
   ];
 
   const languages = [
-    { name: "English", level: "Native", flag: "🇬🇧" },
-    { name: "French", level: "Intermediate", flag: "🇫🇷" },
-    { name: "Spanish", level: "Basic", flag: "🇪🇸" },
+    { name: "English", level: "Fluent", flag: "🇬🇧" },
+    { name: "Pidgin", level: "Native", flag: "🇳🇬" },
+    { name: "Spanish", level: "Beginner", flag: "🇪🇸" },
   ];
 
   const interests = [

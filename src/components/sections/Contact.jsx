@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaLinkedin, FaGithub, FaUser, FaPaperPlane, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
-import axios from 'axios';
+import { FaEnvelope, FaLinkedin, FaGithub, FaUser, FaPaperPlane, FaMapMarkerAlt } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,29 +14,56 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    console.log(`📝 Field changed: ${name} = "${value}" (length: ${value.length})`);
+    setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
+    console.log('🚀 Form submission started');
+    console.log('📦 Form data:', formData);
+    
     setIsSubmitting(true);
     setStatus({ type: '', message: '' });
 
     try {
-      await axios.post(
-        `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/contact`,
-        formData
+      // Get EmailJS credentials from environment variables
+      const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
+      const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
+      const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
+
+      // EmailJS template parameters matching your template variables
+      const templateParams = {
+        name: formData.name,        // Maps to {{name}} in template
+        email: formData.email,      // Maps to {{email}} in template
+        title: formData.subject,    // Maps to {{title}} in template
+        message: formData.message,  // Maps to {{message}} in template
+      };
+
+      console.log(`🌐 Sending via EmailJS...`);
+      
+      const response = await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        templateParams,
+        PUBLIC_KEY
       );
 
-      setStatus({ type: 'success', message: 'Message sent successfully! I\'ll get back to you soon.' });
+      console.log('✅ Success response:', response);
+      setStatus({ 
+        type: 'success', 
+        message: 'Message sent successfully! I\'ll get back to you soon.' 
+      });
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
+      console.error('❌ Error caught:', error);
       setStatus({ 
         type: 'error', 
-        message: error.response?.data?.message || 'Failed to send message. Please try again.' 
+        message: error.text || 'Failed to send message. Please try again.' 
       });
     } finally {
       setIsSubmitting(false);
+      console.log('🏁 Form submission completed');
     }
   };
 
@@ -106,7 +133,7 @@ const Contact = () => {
             className="lg:col-span-2"
           >
             <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-8 border border-gray-100 dark:border-gray-700">
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="space-y-6">
                 {/* Name and Email in a row on larger screens */}
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="relative">
@@ -121,6 +148,8 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
+                        minLength={2}
+                        maxLength={100}
                         placeholder="John Doe"
                         className="w-full pl-12 pr-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
                       />
@@ -156,6 +185,8 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
+                    minLength={3}
+                    maxLength={200}
                     placeholder="How can I help you?"
                     className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
                   />
@@ -170,30 +201,58 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
+                    minLength={10}
+                    maxLength={2000}
                     rows="6"
-                    placeholder="Tell me about your project..."
-                    className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all resize-none"
+                    placeholder="Tell me about your project... (minimum 10 characters)"
+                    className={`w-full px-4 py-3 rounded-xl border-2 ${
+                      formData.message.length > 0 && formData.message.length < 10
+                        ? 'border-red-300 dark:border-red-600'
+                        : 'border-gray-200 dark:border-gray-600'
+                    } bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all resize-none`}
                   ></textarea>
+                  <div className="flex justify-between items-center mt-1">
+                    <p className={`text-xs ${
+                      formData.message.length < 10 
+                        ? 'text-red-500 dark:text-red-400' 
+                        : 'text-green-600 dark:text-green-400'
+                    }`}>
+                      {formData.message.length < 10 
+                        ? `${10 - formData.message.length} more characters needed`
+                        : '✓ Minimum length met'
+                      }
+                    </p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                      {formData.message.length} / 2000
+                    </p>
+                  </div>
                 </div>
 
                 {status.message && (
                   <motion.div 
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className={`p-4 rounded-xl flex items-center gap-3 ${
+                    className={`p-4 rounded-xl flex items-start gap-3 ${
                       status.type === 'success'
                         ? 'bg-green-50 text-green-700 dark:bg-green-900/30 dark:text-green-300 border-2 border-green-200 dark:border-green-800'
                         : 'bg-red-50 text-red-700 dark:bg-red-900/30 dark:text-red-300 border-2 border-red-200 dark:border-red-800'
                     }`}
                   >
-                    <span className="text-2xl">{status.type === 'success' ? '✓' : '✕'}</span>
-                    <span className="font-medium">{status.message}</span>
+                    <span className="text-2xl">{status.type === 'success' ? '✓' : '⚠️'}</span>
+                    <div>
+                      <span className="font-medium block">{status.message}</span>
+                      {status.type === 'error' && (
+                        <span className="text-sm mt-1 block">
+                          Check the browser console for more details.
+                        </span>
+                      )}
+                    </div>
                   </motion.div>
                 )}
 
                 <button
-                  type="submit"
-                  disabled={isSubmitting}
+                  onClick={handleSubmit}
+                  disabled={isSubmitting || formData.message.trim().length < 10}
                   className="group relative w-full px-8 py-4 bg-gradient-to-r from-primary-600 to-blue-600 text-white font-semibold rounded-xl hover:from-primary-700 hover:to-blue-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl overflow-hidden"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2">
@@ -214,11 +273,11 @@ const Contact = () => {
                   </span>
                   <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
                 </button>
-              </form>
+              </div>
             </div>
           </motion.div>
 
-          {/* Contact Info - Takes 1 column */}
+          {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
