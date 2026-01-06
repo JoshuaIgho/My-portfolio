@@ -1,33 +1,73 @@
-# Portfolio — Joshua Igho
+# Personal Portfolio Website
 
-A personal portfolio built with React, Vite and Tailwind CSS showcasing projects, skills, certifications and contact details.
+This is my personal developer portfolio showcasing my skills, projects, and experience as a **Web Application Developer** specializing in the **PERN stack (PostgreSQL, Express, React, Node.js)**.
 
-## Features
+The portfolio highlights real-world projects I have built, my technical skill set, and ways to get in touch with me.
 
-- Hero, About, Skills, Projects, Certifications and Contact sections
-- Responsive design with dark mode
-- Animations via Framer Motion
-- Iconography with react-icons
-- Data-driven components (projects & certifications)
-- Smooth scrolling navigation
+---
 
-## Tech Stack
+## 🚀 Live Demo
+🔗 https://joshuaigho.netlify.app
 
-- React (v19)
-- Vite
-- Tailwind CSS (v4)
-- PostCSS / @tailwindcss/postcss
-- Framer Motion
-- react-icons
-- Axios
+---
 
-## Quick start
+## 🧑‍💻 About Me
+I am a Web Application Developer with hands-on experience building modern, scalable, and responsive web applications. I focus on clean architecture, performance, and real-world usability, and I enjoy turning ideas into fully functional products.
 
-Prerequisites: Node.js (recommended 18+)
+---
 
-1. Clone
+## 🛠️ Tech Stack
+**Frontend**
+- React.js
+- JavaScript (ES6+)
+- TypeScript
+- Tailwind CSS
+- HTML5 & CSS3
 
-```bash
-git clone https://github.com/JoshuaIgho/My-portfolio.git
-cd My-portfolio/client
-```
+**Backend**
+- Node.js
+- Express.js
+- RESTful APIs
+
+**Database**
+- PostgreSQL
+- Prisma ORM
+
+**Tools**
+- Git & GitHub
+- Netlify (deployment)
+
+---
+
+## 📂 Featured Projects
+
+### **Charmé — Full-Stack E-Commerce Platform**
+A complete e-commerce web application with product browsing, cart management, checkout, secure payments, and address handling.
+
+**Stack:** React, Node.js, Express, PostgreSQL, Prisma
+
+---
+
+### **AfricaCaribbeanConnect — Organization Portfolio**
+A professional portfolio platform showcasing documentaries, team members, YouTube content, and organizational work.
+
+**Role:** Frontend Developer  
+**Stack:** React, Tailwind CSS
+
+---
+
+### **Link-Sharing Web Application**
+A customizable link-sharing platform with authentication, profile personalization, file uploads, and public profile pages.
+
+**Stack:** React, Tailwind CSS, Node.js, Express, PostgreSQL
+
+---
+
+## 📬 Contact
+- **Portfolio:** https://joshuaigho.netlify.app
+- **GitHub:** https://github.com/JoshuaIgho
+- **X former Twitter:** [https://www.linkedin.com/feed/](https://x.com/Joshua_M_codes)
+
+---
+
+
