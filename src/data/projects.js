@@ -37,5 +37,23 @@ export const projects = [
     live: 'https://africa-untold-journeys.vercel.app/',
     category: 'frontend'
   },
-  
+  {
+    id: 3,
+    title: 'LinkShare',
+    subtitle: 'Full-stack link-in-bio platform ',
+    description: 'A modern, full-stack link-in-bio platform that helps creators, entrepreneurs, and brands share all their important links through a single, beautiful page.',
+    image: new URL('../assets/Link sharing.png', import.meta.url).href,
+    technologies: ['React', 'Node.js', 'Express', 'Postgres', 'Tailwind CSS'],
+    features: [
+      'Complete authentication system with JWT',
+      'Beautiful, responsive UI with Tailwind CSS',
+      'Drag-and-drop link management',
+      'Social media platform icons with Font Awesome',
+      'Professional landing page',
+      'Public profile pages with custom themes'
+    ],
+    github: 'https://github.com/JoshuaIgho/Link-sharing',
+    live: 'https://linkshare-mocha.vercel.app/',
+    category: 'full-stack'
+  },
 ];
