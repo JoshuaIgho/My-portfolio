@@ -64,9 +64,9 @@ A customizable link-sharing platform with authentication, profile personalizatio
 ---
 
 ## 📬 Contact
-- **Portfolio:** https://joshuaigho.netlify.app
-- **GitHub:** https://github.com/JoshuaIgho
-- **X former Twitter:** [https://www.linkedin.com/feed/](https://x.com/Joshua_M_codes)
+- **Mail:** joshuaalex822@gmail.com
+- **X former Twitter:** https://x.com/Joshua_M_codes
+- **Instagram:** https://www.instagram.com/warrii___/
 
 ---
 
