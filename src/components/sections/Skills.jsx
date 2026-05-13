@@ -22,14 +22,12 @@ const Skills = () => {
       icon: FaReact,
       color: "blue",
       skills: [
-        { name: 'React.js', icon: FaReact },
-        { name: 'JavaScript (ES6+)', icon: FaJs },
-        { name: 'TypeScript', icon: SiTypescript },
         { name: 'HTML5', icon: FaHtml5 },
-        { name: 'CSS3/SASS', icon: FaCss3Alt },
+        { name: 'CSS3', icon: FaCss3Alt },
         { name: 'Tailwind CSS', icon: SiTailwindcss },
-        { name: 'Next.js', icon: SiNextdotjs },
-        { name: 'Responsive Design', icon: FaReact }
+        { name: 'Responsive Design', icon: FaReact },
+        { name: 'JavaScript (ES6+)', icon: FaJs },
+        { name: 'React.js', icon: FaReact },
       ]
     },
     backend: {
@@ -42,7 +40,6 @@ const Skills = () => {
         { name: 'REST APIs', icon: FaDatabase },
         { name: 'MongoDB', icon: SiMongodb },
         { name: 'PostgreSQL', icon: SiPostgresql },
-        { name: 'Redis', icon: SiRedis },
         { name: 'Authentication (JWT)', icon: FaNodeJs },
         { name: 'API Integration', icon: FaDatabase }
       ]
@@ -53,21 +50,17 @@ const Skills = () => {
       color: "purple",
       skills: [
         { name: 'Git & GitHub', icon: FaGithub },
-        { name: 'Docker', icon: FaDocker },
-        { name: 'AWS', icon: FaAws },
         { name: 'Vercel', icon: SiVercel },
         { name: 'VS Code', icon: FaCode },
         { name: 'Postman', icon: FaDatabase },
-        { name: 'Linux/Unix', icon: FaPython },
-        { name: 'CI/CD', icon: FaGithub }
       ]
     }
   };
 
   const additionalSkills = [
     'REST APIs', 'GraphQL', 'JWT Authentication', 'OAuth', 'Stripe Integration',
-    'Payment Gateways', 'Responsive Design', 'Agile/Scrum', 'Git Version Control',
-    'CI/CD Pipelines', 'Unit Testing', 'SEO Optimization', 'Web Performance',
+    'Payment Gateways', 'Responsive Design', 'Git Version Control',
+     'Unit Testing', 'SEO Optimization', 'Web Performance',
     'Accessibility (WCAG)', 'Web Security', 'Database Design'
   ];
 

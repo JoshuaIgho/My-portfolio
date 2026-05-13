@@ -89,12 +89,6 @@ const Contact = () => {
       href: 'https://github.com/JoshuaIgho',
       color: 'from-gray-600 to-gray-800'
     },
-    {
-      icon: FaMapMarkerAlt,
-      title: 'Location',
-      value: 'Lagos, Nigeria',
-      color: 'from-green-500 to-emerald-500'
-    }
   ];
 
   return (
@@ -335,22 +329,7 @@ const Contact = () => {
                   </div>
                 </motion.a>
               ))}
-            </div>
-
-            {/* Quick Response */}
-            <div className="bg-yellow-50 dark:bg-yellow-900/20 border-2 border-yellow-200 dark:border-yellow-800 rounded-xl p-4">
-              <div className="flex items-start gap-3">
-                <span className="text-2xl">⚡</span>
-                <div>
-                  <p className="font-semibold text-yellow-900 dark:text-yellow-200 mb-1">
-                    Quick Response
-                  </p>
-                  <p className="text-sm text-yellow-800 dark:text-yellow-300">
-                    I typically respond within 24 hours during business days.
-                  </p>
-                </div>
-              </div>
-            </div>
+            </div>          
           </motion.div>
         </div>
       </div>

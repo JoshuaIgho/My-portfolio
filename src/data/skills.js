@@ -9,7 +9,7 @@ export const skills = {
   backend: [
     { name: 'Node.js', level: 90, icon: 'FaNodeJs' },
     { name: 'Express', level: 90, icon: 'SiExpress' },
-    { name: 'MongoDB', level: 85, icon: 'SiMongodb' },
+    { name: 'Postgres', level: 85, icon: 'SiMongodb' },
     { name: 'PostgreSQL', level: 80, icon: 'SiPostgresql' },
     { name: 'REST APIs', level: 90, icon: 'FaServer' }
   ],

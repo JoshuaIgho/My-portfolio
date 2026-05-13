@@ -17,6 +17,14 @@ export const certifications = [
   },
   {
     id: 3,
+    title: 'Javascript Algorithms and Data Structure',
+    issuer: 'freecodecamp ',
+    date: '2025',
+    image: new URL('../assets/Certificate.png', import.meta.url).href,
+    verifyUrl: 'https://www.freecodecamp.org/certification/warri/javascript-algorithms-and-data-structure-v8'
+  },
+  {
+    id: 4,
     title: 'Digital Skills: Artificial Intelligence',
     issuer: 'FutureLearn - Accenture',
     date: '2025',

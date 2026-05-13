@@ -1,5 +1,12 @@
-import { FaGithub, FaLinkedin, FaEnvelope, FaDownload, FaCode, FaRocket } from 'react-icons/fa';
-import { motion } from 'framer-motion';
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaDownload,
+  FaCode,
+  FaRocket,
+} from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   // Floating animation for tech icons
@@ -8,15 +15,15 @@ const Hero = () => {
     transition: {
       duration: 3,
       repeat: Infinity,
-      ease: "easeInOut"
-    }
+      ease: "easeInOut",
+    },
   };
 
   const techStack = [
-    { name: 'React', color: '#61DAFB', symbol: '⚛️' },
-    { name: 'Node.js', color: '#339933', symbol: '🟢' },
-    { name: 'MongoDB', color: '#47A248', symbol: '🍃' },
-    { name: 'TypeScript', color: '#3178C6', symbol: '📘' },
+    { name: "React", color: "#61DAFB", symbol: "⚛️" },
+    { name: "Node.js", color: "#339933", symbol: "🟢" },
+    { name: "Postgres", color: "#47A248", symbol: "🐘" },
+    { name: "Javascript", color: "#3178C6", symbol: "📘" },
   ];
 
   return (
@@ -32,7 +39,7 @@ const Hero = () => {
           transition={{
             duration: 8,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
           }}
           className="absolute top-20 left-10 w-72 h-72 bg-primary-400 rounded-full blur-3xl"
         />
@@ -44,7 +51,7 @@ const Hero = () => {
           transition={{
             duration: 10,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
           }}
           className="absolute bottom-20 right-10 w-96 h-96 bg-blue-400 rounded-full blur-3xl"
         />
@@ -56,7 +63,7 @@ const Hero = () => {
           transition={{
             duration: 7,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
           }}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-purple-400 rounded-full blur-3xl"
         />
@@ -74,7 +81,7 @@ const Hero = () => {
               duration: 5 + index,
               repeat: Infinity,
               ease: "easeInOut",
-              delay: index * 0.5
+              delay: index * 0.5,
             }}
             className="absolute text-4xl opacity-20 dark:opacity-10"
             style={{
@@ -128,17 +135,19 @@ const Hero = () => {
                   Certified Full-Stack Developer
                 </p>
                 <div className="flex flex-wrap justify-center lg:justify-start gap-2 text-sm">
-                  {['React', 'Node.js', 'TypeScript', 'MongoDB'].map((tech, index) => (
-                    <motion.span
-                      key={tech}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                      className="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full font-medium"
-                    >
-                      {tech}
-                    </motion.span>
-                  ))}
+                  {["React", "Node.js", "Javascript", "Postgres"].map(
+                    (tech, index) => (
+                      <motion.span
+                        key={tech}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+                        className="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full font-medium"
+                      >
+                        {tech}
+                      </motion.span>
+                    ),
+                  )}
                 </div>
               </div>
 
@@ -149,8 +158,9 @@ const Hero = () => {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto lg:mx-0 mb-8"
               >
-                Building scalable web applications with modern technologies. 
-                Passionate about creating seamless user experiences and robust backend systems.
+                Building scalable web applications with modern technologies.
+                Passionate about creating seamless user experiences and robust
+                backend systems.
               </motion.p>
             </motion.div>
 
@@ -171,10 +181,10 @@ const Hero = () => {
                 </span>
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
               </a>
-              
+
               <a
-                href="https://1drv.ms/w/c/c8d5c89dc81fe9ea/IQB_w7zIhjxJQ7V5ItxlKFVsAYZItq-4zkJy5HSBSbuBHpA?e=8VXFWu"
-                download
+                href="/resume.pdf"
+                download="Joshua_Igho_Resume.pdf"
                 className="group px-8 py-4 border-2 border-primary-600 dark:border-primary-500 text-primary-600 dark:text-primary-400 font-semibold rounded-xl hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-all flex items-center gap-2 shadow-md hover:shadow-lg"
               >
                 <FaDownload className="group-hover:translate-y-1 transition-transform" />
@@ -190,15 +200,34 @@ const Hero = () => {
               className="flex justify-center lg:justify-start gap-4"
             >
               {[
-                { icon: FaGithub, href: 'https://github.com/JoshuaIgho', label: 'GitHub', color: 'hover:text-gray-900 dark:hover:text-white' },
-                { icon: FaLinkedin, href: 'https://www.linkedin.com/in/igho-joshua-b93a92289/', label: 'LinkedIn', color: 'hover:text-blue-600' },
-                { icon: FaEnvelope, href: 'mailto:joshuaalex822@gmail.com', label: 'Email', color: 'hover:text-red-600' }
+                {
+                  icon: FaGithub,
+                  href: "https://github.com/JoshuaIgho",
+                  label: "GitHub",
+                  color: "hover:text-gray-900 dark:hover:text-white",
+                },
+                {
+                  icon: FaLinkedin,
+                  href: "https://www.linkedin.com/in/joshtechbuild/",
+                  label: "LinkedIn",
+                  color: "hover:text-blue-600",
+                },
+                {
+                  icon: FaEnvelope,
+                  href: "mailto:joshuaalex822@gmail.com",
+                  label: "Email",
+                  color: "hover:text-red-600",
+                },
               ].map((social, index) => (
                 <motion.a
                   key={social.label}
                   href={social.href}
-                  target={social.href.startsWith('http') ? '_blank' : undefined}
-                  rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  target={social.href.startsWith("http") ? "_blank" : undefined}
+                  rel={
+                    social.href.startsWith("http")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
                   whileHover={{ scale: 1.1, y: -5 }}
                   whileTap={{ scale: 0.95 }}
                   className={`w-12 h-12 flex items-center justify-center bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all text-gray-600 dark:text-gray-400 ${social.color} border border-gray-200 dark:border-gray-700`}
@@ -220,7 +249,7 @@ const Hero = () => {
             <div className="relative w-full aspect-square max-w-lg mx-auto">
               {/* Main Circle */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary-500 via-blue-500 to-purple-600 rounded-full opacity-20 blur-2xl"></div>
-              
+
               {/* Code Window Mockup */}
               <div className="relative bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-6 border border-gray-200 dark:border-gray-700 overflow-hidden">
                 {/* Window Controls */}
@@ -238,43 +267,58 @@ const Hero = () => {
                     transition={{ duration: 0.5, delay: 0.8 }}
                     className="text-purple-600 dark:text-purple-400"
                   >
-                    <span className="text-blue-600 dark:text-blue-400">const</span> developer = {'{'}
+                    <span className="text-blue-600 dark:text-blue-400">
+                      const
+                    </span>{" "}
+                    developer = {"{"}
                   </motion.div>
-                  
+
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.9 }}
                     className="pl-4 text-gray-700 dark:text-gray-300"
                   >
-                    name: <span className="text-green-600 dark:text-green-400">'Joshua Igho'</span>,
+                    name:{" "}
+                    <span className="text-green-600 dark:text-green-400">
+                      'Joshua Igho'
+                    </span>
+                    ,
                   </motion.div>
-                  
+
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 1.0 }}
                     className="pl-4 text-gray-700 dark:text-gray-300"
                   >
-                    skills: <span className="text-orange-600 dark:text-orange-400">['React', 'Node.js']</span>,
+                    skills:{" "}
+                    <span className="text-orange-600 dark:text-orange-400">
+                      ['React', 'Node.js']
+                    </span>
+                    ,
                   </motion.div>
-                  
+
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 1.1 }}
                     className="pl-4 text-gray-700 dark:text-gray-300"
                   >
-                    passion: <span className="text-green-600 dark:text-green-400">'Building amazing apps'</span>,
+                    passion:{" "}
+                    <span className="text-green-600 dark:text-green-400">
+                      'Building amazing apps'
+                    </span>
+                    ,
                   </motion.div>
-                  
+
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 1.2 }}
                     className="text-purple-600 dark:text-purple-400"
                   >
-                    {'};'}
+                    {"};"}
                   </motion.div>
                 </div>
 
@@ -297,8 +341,8 @@ const Hero = () => {
                     duration: 4,
                     repeat: Infinity,
                     ease: "easeInOut",
-                    delay: 1
-                  }
+                    delay: 1,
+                  },
                 }}
                 className="absolute -bottom-4 -left-4 bg-white dark:bg-gray-800 rounded-xl shadow-xl p-4 border border-gray-200 dark:border-gray-700"
               >
@@ -326,8 +370,18 @@ const Hero = () => {
             className="flex flex-col items-center gap-2 text-gray-600 dark:text-gray-400"
           >
             <span className="text-xs font-medium">Scroll Down</span>
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+              />
             </svg>
           </motion.div>
         </motion.div>
