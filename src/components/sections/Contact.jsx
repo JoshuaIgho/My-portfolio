@@ -34,10 +34,10 @@ const Contact = () => {
 
       // EmailJS template parameters matching your template variables
       const templateParams = {
-        name: formData.name,        // Maps to {{name}} in template
-        email: formData.email,      // Maps to {{email}} in template
-        title: formData.subject,    // Maps to {{title}} in template
-        message: formData.message,  // Maps to {{message}} in template
+        name: formData.name,        // Maps to {name} in template
+        email: formData.email,      // Maps to {email} in template
+        title: formData.subject,    // Maps to {title} in template
+        message: formData.message,  // Maps to {message} in template
       };
 
       console.log(`🌐 Sending via EmailJS...`);
